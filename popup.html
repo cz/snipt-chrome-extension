@@ -29,9 +29,11 @@
 						<form action="" enctype="application/json; charset=utf-8">
 							<header>
                                 <h1>
+                                	<label for="title">Title</label>
                                     <input type="text" name="title" id="title"/>
                                 </h1>
                             </header>
+                            <label for="code">Code</label>
                             <section class="code">
 								<textarea name="code" id="code"></textarea>
                             </section>
@@ -276,7 +278,7 @@
 							</select>
 							<label for="tags">Tags</label>
 							<input type="text" name="tags" id="tags"/>
-							<p class="checkbox"><input type="checkbox" name="public" id="public" value="public"/> Public</p>
+							<label class="checkbox" for="public"><input type="checkbox" name="public" id="public" value="public"/> Public</label>
 							<div class="actions">
 								<button class="btn btn-success">Post</button>
 							</div>
