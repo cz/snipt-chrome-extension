@@ -1,0 +1,27 @@
+{
+	"name": "Snipt",
+	"version": "0.1",
+	"description": "Save text or code to snipt.net",
+	"homepage_url": "https://snipt.net",
+	"permissions": [
+		"https://snipt.net/",
+		"tabs"
+		],
+	"omnibox": {
+			"keyword": "snipt"
+		},
+	"icons": {
+		"16": "images/snipt.png"
+		},
+	"browser_action": {
+		"default_icon": "images/snipt.png",
+		"default_title": "Snipt it",
+		"popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": ["scripts/snipt.content.js"]
+		}
+	]
+}
