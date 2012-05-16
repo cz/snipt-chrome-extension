@@ -4,7 +4,7 @@ var Snipt = {
 		Snipt.status.container = $('header.sub');
 		Snipt.status.text = Snipt.status.container.find('span').html();
 
-		if(!localStorage.getItem('validated') == 'true') {
+		if(localStorage.getItem('validated') != 'true') {
 			Snipt.switch_view();
 			Snipt.message.set('error', 'Start by supplying API credentials');
 		} else {
