@@ -5,7 +5,8 @@
 	"description": "Save text or code to snipt.net",
 	"permissions": [
 		"https://snipt.net/",
-		"tabs"
+		"tabs",
+		"contextMenus"
 		],
 	"icons": {
 		"16": "images/icon-16.png",
@@ -23,5 +24,8 @@
 			"js": ["scripts/snipt.content.js"]
 		}
 	],
+	"background": {
+		"scripts": ["scripts/snipt.bg.js"]
+	},
 	"content_security_policy": "script-src 'self' https://snipt.net; object-src 'self'"
 }

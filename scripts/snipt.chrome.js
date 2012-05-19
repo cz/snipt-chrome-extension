@@ -130,15 +130,22 @@ var Snipt = {
 	},
 
 	get_selection: function() {
-		chrome.tabs.getSelected(null, function(tab) {
-			chrome.tabs.sendRequest(tab.id, {helper: 'get_selection'}, function(response) {
-					selection = response.selection;
-
-					chrome.tabs.getSelected(null, function(tab) {
-						$('#code').val(selection);
-					});
+		if(chrome.extension.getBackgroundPage().selection !== '') {
+			chrome.tabs.getSelected(null, function(tab) {
+				$('#code').val(chrome.extension.getBackgroundPage().selection);
 			});
-		});
+			chrome.extension.sendRequest({ msg: "clearSelection" });
+		} else {
+			chrome.tabs.getSelected(null, function(tab) {
+				chrome.tabs.sendRequest(tab.id, {helper: 'get_selection'}, function(response) {
+						selection = response.selection;
+
+						chrome.tabs.getSelected(null, function(tab) {
+							$('#code').val(selection);
+						});
+				});
+			});
+		}
 	},
 
 	message: {
