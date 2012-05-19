@@ -1,7 +1,6 @@
 {
 	"name": "Snipt",
 	"version": "1.0",
-	"manifest_version": 2,
 	"description": "Save text or code to snipt.net",
 	"permissions": [
 		"https://snipt.net/",
