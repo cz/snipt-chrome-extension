@@ -141,7 +141,7 @@ header.sub {
   header.sub a {
     text-decoration: underline;
   }
-  .header.sub.success a, .header.sub.error a {
+  header.sub.success a, header.sub.error a {
     color: #fff;
   }
 header.sub.success {
