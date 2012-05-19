@@ -6,27 +6,22 @@
 		<link rel="stylesheet" href="styles/main.css">
 		<script src="scripts/jquery-1.7.2.min.js"></script>
 		<script src="scripts/snipt.chrome.js"></script>
-		<script>
-			$(document).ready(function(){
-				Snipt.init();
-			});
-		</script>
+		<base target="_blank" />
 	</head>
 	<body class="detail editing">
 		<header class="main">
 			<div class="inner">
 				<h1><a href="http://snipt.net">Snipt</a></h1>
 			</div>
-			<a href="#" id="toggle-creds">Creds</a>
+			<a href="#" class="toggle-view">Creds</a>
 		</header>
 		<header class="sub">
-			<span>Awww snipt!</span>
 		</header>
 		<article class="snipt editing">
 			<ul id="tabs">
 				<li id="post">
 					<div class="container">
-						<form action="" enctype="application/json; charset=utf-8">
+						<form action="" enctype="application/json; charset=utf-8" id="post-snipt">
 							<header>
 								<h1>
 									<label for="title">Title</label>
@@ -291,8 +286,9 @@
 							<label>Username</label>
 							<input type="text" name="username" id="username"/>
 
-							<label>API Key</label>
+							<label>API Key <a href="https://snipt.net/api/">Get your key</a></label>
 							<input type="text" name="key" id="key"/>
+							<p>No account? <a href="https://snipt.net/signup/">Sign up!</a></p>
 							<div class="actions">
 								<button class="remove btn btn-danger">Remove</button>
 								<button class="save btn btn-success">Save</button>

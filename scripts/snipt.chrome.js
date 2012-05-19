@@ -2,14 +2,14 @@ var Snipt = {
 
 	init: function() {
 		Snipt.status.container = $('header.sub');
-		Snipt.status.text = Snipt.status.container.find('span').html();
+		Snipt.get_selection();
 
 		if(localStorage.getItem('validated') != 'true') {
 			Snipt.switch_view();
 			Snipt.message.set('error', 'Start by supplying API credentials');
 		} else {
 			Snipt.creds.populate();
-			Snipt.get_selection();
+			Snipt.message.set(null, Snipt.status.text());
 		}
 		$('#creds button.save').click(function(e){
 			e.preventDefault();
@@ -23,7 +23,7 @@ var Snipt = {
 			e.preventDefault();
 			Snipt.api.post();
 		})
-		$('#toggle-creds').click(function(e){
+		$('.toggle-view').click(function(e){
 			e.preventDefault();
 			Snipt.switch_view();
 		})
@@ -63,8 +63,8 @@ var Snipt = {
 				crossDomain: true,
 				beforeSend : Snipt.api.set_header,
 				success: function(data){
-					Snipt.message.flash('success', 'Successfully posted!');
-					$('#post form').reset();
+					Snipt.message.flash('success', 'Successfully posted! <a href="https://snipt.net' + data.absolute_url + '">View snipt</a>');
+					document.getElementById('post-snipt').reset();
 				},
 				error: function(request, status, error){
 					Snipt.message.flash('error', 'Sorry, something went wrong :-(');
@@ -144,31 +144,45 @@ var Snipt = {
 	message: {
 		set: function(status, message) {
 			var bar = Snipt.status.container;
-			var span = bar.find('span');
 
 			bar.removeClass('error success');
 			if(status != null) {
 				bar.addClass(status);
 			}
-			span.html(message);
+			bar.html(message);
 		},
 
 		flash: function(status, message) {
 			Snipt.message.set(status, message);
 
 			setTimeout(function(){
-				Snipt.message.set(null, Snipt.status.text);
-			}, 2000)
-		}
+				Snipt.message.set(null, Snipt.status.text());
+			}, 5000)
+		},
+
+		list: [
+			'Try me after selecting some text!',
+			'Did you know Snipt has a <a href="https://snipt.net/blog/"> blog</a>?',
+			'Follow <a href="https://twitter.com/snipt">@snipt</a> on Twitter!'
+		]
 	},
 
 	switch_view: function() {
-		$('#tabs li').toggle();
-		$('#toggle-creds').toggleClass('back');
+		$('#tabs li').animate({
+			height: 'toggle'
+		}, 50);
+		$('.toggle-view').toggleClass('back');
 	},
 
 	status: {
 		container: {},
-		text: ''
+		text: function() {
+			var key = Math.floor(Math.random() * Snipt.message.list.length);
+			return Snipt.message.list[key];
+		}
 	}
 };
+
+$(document).ready(function(){
+	Snipt.init();
+});

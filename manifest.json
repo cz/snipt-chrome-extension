@@ -1,6 +1,7 @@
 {
 	"name": "Snipt",
 	"version": "1.0",
+	"manifest_version": 2,
 	"description": "Save text or code to snipt.net",
 	"permissions": [
 		"https://snipt.net/",
@@ -21,5 +22,6 @@
 			"matches": ["http://*/*", "https://*/*"],
 			"js": ["scripts/snipt.content.js"]
 		}
-	]
+	],
+	"content_security_policy": "script-src 'self' https://snipt.net; object-src 'self'"
 }

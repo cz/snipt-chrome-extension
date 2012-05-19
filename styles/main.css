@@ -113,7 +113,7 @@ header.main {
         width: 87px; }
         header.main div.inner h1 a:focus {
           outline: none; }
-  header.main #toggle-creds {
+  header.main .toggle-view {
   	position: absolute;
   	top: 14px; right: 10px;
   	width:20px;
@@ -122,7 +122,7 @@ header.main {
   	background: url('../images/icons.png') no-repeat 0px 0px;
   }
 
-  header.main #toggle-creds.back {
+  header.main .toggle-view.back {
 	background-position: 0px -20px;
   }
 
@@ -137,6 +137,12 @@ header.sub {
   text-shadow: 0 1px 0 #FFF;
   line-height: 13px;
   text-align: center;
+  }
+  header.sub a {
+    text-decoration: underline;
+  }
+  .header.sub.success a, .header.sub.error a {
+    color: #fff;
   }
 header.sub.success {
 	color:#dff0d8;
@@ -205,7 +211,19 @@ label.checkbox {
 	float: left;
 	margin: 20px 0 0;
 }
+label a {
+  float: right;
+  text-transform: none;
+  font-weight: normal;
+  font-size: 11px;
+  color: #888;
+}
 div.actions {
 	margin-top: 20px;
 	text-align: right;
+}
+#creds p {
+  float: left;
+  font-size: 11px;
+  margin: 30px 0 0;
 }
