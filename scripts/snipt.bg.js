@@ -12,19 +12,16 @@ function saveSelection(info, tab) {
 	});
 
 	chrome.windows.get(tab.windowId, null, function(window) {
-		tpos = window.top + 300;
-		lpos = window.left + 300;
-
-		console.log(tpos);
-		console.log(lpos);
+		tpos = window.height / 2 + window.top - 245;
+		lpos = window.width / 2 + window.left - 170;
 
 		chrome.windows.create({
 			'url': 'popup.html',
 			'type': 'popup',
 			'width': 340,
 			'height': 490,
-			'top': 0,
-			'left': 0
+			'top': tpos,
+			'left': lpos
 		});
 	});
 }
@@ -35,7 +32,6 @@ var clearSelection = function() {
 
 chrome.extension.onRequest.addListener(
 	function(request, sender, sendResponse){
-		console.log(sender);
 		if(request.msg == "clearSelection") clearSelection();
 		if(request.msg == "saveSelection") saveSelection(null, sender.tab);
 	}
