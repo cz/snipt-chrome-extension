@@ -35,6 +35,8 @@ var clearSelection = function() {
 
 chrome.extension.onRequest.addListener(
 	function(request, sender, sendResponse){
+		console.log(sender);
 		if(request.msg == "clearSelection") clearSelection();
+		if(request.msg == "saveSelection") saveSelection(null, sender.tab);
 	}
 );

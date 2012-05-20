@@ -8,3 +8,19 @@ chrome.extension.onRequest.addListener(
         }
     }
 );
+
+var isCtrl = false;
+var isShift = false;
+document.onkeyup=function(e){
+	if(e.which == 17) isCtrl=false;
+	if(e.which == 16) isShift=false;
+}
+document.onkeydown=function(e){
+	console.log(e);
+	if(e.which == 17) isCtrl=true;
+	if(e.which == 16) isShift=true;
+	if(e.which == 83 && isCtrl == true && isShift == true) {
+		chrome.extension.sendRequest({ msg: "saveSelection" });
+		return false;
+	}
+}
