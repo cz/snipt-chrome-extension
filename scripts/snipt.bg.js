@@ -9,20 +9,13 @@ chrome.contextMenus.create({
 function saveSelection(info, tab) {
 	chrome.tabs.sendRequest(tab.id, {helper: 'get_selection'}, function(response) {
 			selection = response.selection;
-	});
 
-	chrome.windows.get(tab.windowId, null, function(window) {
-		tpos = window.height / 2 + window.top - 245;
-		lpos = window.width / 2 + window.left - 170;
-
-		chrome.windows.create({
-			'url': 'popup.html',
-			'type': 'popup',
-			'width': 340,
-			'height': 490,
-			'top': tpos,
-			'left': lpos
-		});
+			chrome.windows.create({
+				'url': 'popup.html',
+				'type': 'popup',
+				'width': 340,
+				'height': 490
+			});
 	});
 }
 
