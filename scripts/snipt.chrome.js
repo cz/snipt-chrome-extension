@@ -27,6 +27,7 @@ var Snipt = {
 			e.preventDefault();
 			Snipt.switch_view();
 		})
+		$('#title').focus();
 	},
 
 	api: {

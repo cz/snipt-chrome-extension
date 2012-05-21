@@ -16,7 +16,6 @@ document.onkeyup=function(e){
 	if(e.which == 16) isShift=false;
 }
 document.onkeydown=function(e){
-	console.log(e);
 	if(e.which == 17) isCtrl=true;
 	if(e.which == 16) isShift=true;
 	if(e.which == 83 && isCtrl == true && isShift == true) {
