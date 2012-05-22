@@ -27,6 +27,13 @@ var Snipt = {
 			e.preventDefault();
 			Snipt.switch_view();
 		})
+		$('header.sub a').live('click', function() {
+			chrome.windows.getCurrent(null, function(window) {
+				if(window.type == 'popup') {
+					chrome.windows.remove(window.id);
+				}
+			});
+		});
 		$('#title').focus();
 	},
 
@@ -171,7 +178,8 @@ var Snipt = {
 		list: [
 			'Try me after selecting some text!',
 			'Did you know Snipt has a <a href="https://snipt.net/blog/"> blog</a>?',
-			'Follow <a href="https://twitter.com/snipt">@snipt</a> on Twitter!'
+			'Follow <a href="https://twitter.com/snipt">@snipt</a> on Twitter!',
+			'Snipt\'s lovely <a href="https://snipt.net/api/">API</a> made this extension possible!'
 		]
 	},
 
