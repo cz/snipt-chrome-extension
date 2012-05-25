@@ -6,6 +6,13 @@ Easily post text or code to Snipt.net via browser button, context menu, or keybo
 
 ## Installation
 
+### Stable
+
+1. Go to the [extension page](https://chrome.google.com/webstore/detail/bkmpbmdfadelliddjcjglploolikpeej/) on the Chrome Web Store
+2. Click 'Add to Chrome'
+
+### Development
+
 1. `git clone https://github.com/cz/snipt-chrome-extension.git`
 2. Open Chrome, and browse to your extensions list
 3. Check the 'Developer mode' checkbox
