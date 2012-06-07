@@ -36,3 +36,8 @@ There are three ways to invoke the extension:
 3. Select text, right click, and choose 'Snipt it' from the context menu
 
 All three options will grab any text you've selected, but for the first two selecting text is optional.
+
+## Changelog
+
+- 1.0: Initial release
+- 1.1: Use `http://` because Snipt stopped supporting `https://`
