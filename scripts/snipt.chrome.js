@@ -34,6 +34,21 @@ var Snipt = {
 				}
 			});
 		});
+		$('.hint a').click(function(e){
+			e.preventDefault();
+			var $input = $('#tags');
+			var tags = $input.val().split(',');
+
+			if(tags.indexOf('tmp') != -1) {
+				tags.splice(tags.indexOf('tmp'), 1);
+			} else {
+				tags.push('tmp');
+			}
+			var results = new Array();
+			for (k in tags) if(tags[k]) results.push(tags[k])
+
+			$input.val(results.join(','));
+		});
 		$('#title').focus();
 	},
 
@@ -59,6 +74,10 @@ var Snipt = {
 				data.public = true;
 			}
 
+			if($('#blog').is(':checked')) {
+				data.blog_post = true;
+			}
+
 			data.lexer = $('#lexer option:selected').val();
 
 			var post_data = JSON.stringify(data);
@@ -71,7 +90,7 @@ var Snipt = {
 				crossDomain: true,
 				beforeSend : Snipt.api.set_header,
 				success: function(data){
-					Snipt.message.flash('success', 'Successfully posted! <a href="https://snipt.net' + data.absolute_url + '">View snipt</a>');
+					Snipt.message.flash('success', 'Successfully posted! <a href="' + data.full_absolute_url + '">View snipt</a>');
 					document.getElementById('post-snipt').reset();
 				},
 				error: function(request, status, error){
@@ -179,7 +198,7 @@ var Snipt = {
 			'Try me after selecting some text!',
 			'Did you know Snipt has a <a href="https://snipt.net/blog/"> blog</a>?',
 			'Follow <a href="https://twitter.com/snipt">@snipt</a> on Twitter!',
-			'Snipt\'s lovely <a href="https://snipt.net/api/">API</a> made this extension possible!'
+			'Snipt\'s <a href="https://snipt.net/api/">API</a> made this extension possible!'
 		]
 	},
 

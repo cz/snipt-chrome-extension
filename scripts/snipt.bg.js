@@ -14,7 +14,7 @@ function saveSelection(info, tab) {
 				'url': 'popup.html',
 				'type': 'popup',
 				'width': 340,
-				'height': 490
+				'height': 505
 			});
 	});
 }
