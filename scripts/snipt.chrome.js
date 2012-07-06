@@ -198,7 +198,8 @@ var Snipt = {
 			'Try me after selecting some text!',
 			'Did you know Snipt has a <a href="https://snipt.net/blog/"> blog</a>?',
 			'Follow <a href="https://twitter.com/snipt">@snipt</a> on Twitter!',
-			'Snipt\'s <a href="https://snipt.net/api/">API</a> made this extension possible!'
+			'Snipt\'s <a href="https://snipt.net/api/">API</a> made this extension possible!',
+			'Use the \'tmp\' tag for quick pastes.'
 		]
 	},
 
