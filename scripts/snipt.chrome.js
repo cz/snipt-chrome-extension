@@ -38,7 +38,7 @@ var Snipt = {
 	},
 
 	api: {
-		base_url: 'http://snipt.net/api/private/snipt/',
+		base_url: 'https://snipt.net/api/private/snipt/',
 
 		post: function(){
 			var data = {};
@@ -71,7 +71,7 @@ var Snipt = {
 				crossDomain: true,
 				beforeSend : Snipt.api.set_header,
 				success: function(data){
-					Snipt.message.flash('success', 'Successfully posted! <a href="http://snipt.net' + data.absolute_url + '">View snipt</a>');
+					Snipt.message.flash('success', 'Successfully posted! <a href="https://snipt.net' + data.absolute_url + '">View snipt</a>');
 					document.getElementById('post-snipt').reset();
 				},
 				error: function(request, status, error){
@@ -177,9 +177,9 @@ var Snipt = {
 
 		list: [
 			'Try me after selecting some text!',
-			'Did you know Snipt has a <a href="http://snipt.net/blog/"> blog</a>?',
+			'Did you know Snipt has a <a href="https://snipt.net/blog/"> blog</a>?',
 			'Follow <a href="https://twitter.com/snipt">@snipt</a> on Twitter!',
-			'Snipt\'s sweet <a href="http://snipt.net/api/">API</a> made this extension possible!'
+			'Snipt\'s lovely <a href="https://snipt.net/api/">API</a> made this extension possible!'
 		]
 	},
 
