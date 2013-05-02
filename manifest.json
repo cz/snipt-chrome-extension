@@ -1,6 +1,6 @@
 {
 	"name": "Snipt",
-	"version": "1.1",
+	"version": "1.2",
 	"manifest_version": 2,
 	"description": "Save text or code to snipt.net",
 	"permissions": [
@@ -15,7 +15,7 @@
 		},
 	"browser_action": {
 		"default_icon": "images/icon-16-gs.png",
-		"default_title": "Snipt it",
+		"default_title": "Snipt",
 		"default_popup": "popup.html"
 	},
 	"content_scripts": [

@@ -32,12 +32,13 @@ Easily post text or code to Snipt.net via browser button, context menu, or keybo
 There are three ways to invoke the extension:
 
 1. Clicking the Snipt browser button
-2. Ctrl+Shift+S
-3. Select text, right click, and choose 'Snipt it' from the context menu
+2. Ctrl+Shift+[
+3. Select text, right click, and choose 'Snipt' from the context menu
 
 All three options will grab any text you've selected, but for the first two selecting text is optional.
 
 ## Changlog
 
+- 1.2: Change keyboard shortcut due to conflicts; allow popup without text selection
 - 1.1: Support for blog posts; `tmp` tag hint (for quick pastes)
 - 1.0: Initial release

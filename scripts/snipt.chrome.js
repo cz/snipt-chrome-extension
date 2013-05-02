@@ -196,10 +196,13 @@ var Snipt = {
 
 		list: [
 			'Try me after selecting some text!',
-			'Did you know Snipt has a <a href="https://snipt.net/blog/"> blog</a>?',
+			'Start <a href="https://snipt.net/blogging/">blogging on Snipt</a> today!',
+			'Check out the <a href="https://blog.snipt.net/">blog</a> for tips & updates.',
 			'Follow <a href="https://twitter.com/snipt">@snipt</a> on Twitter!',
-			'Snipt\'s <a href="https://snipt.net/api/">API</a> made this extension possible!',
-			'Use the \'tmp\' tag for quick pastes.'
+			'<a href="https://snipt.net/pro/">Go Pro</a> for powerful UI and blogging features!',
+			'Use the \'tmp\' tag for quick pastes.',
+			'Like this extension? <a href="https://www.gittip.com/cz/">Tip me</a>!',
+			'You can open me with Ctrl+Shift+['
 		]
 	},
 

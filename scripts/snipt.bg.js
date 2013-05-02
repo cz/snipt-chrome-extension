@@ -1,8 +1,8 @@
 var selection;
 
 chrome.contextMenus.create({
-	'title': 'Snipt it!',
-	'contexts': ['selection', 'editable'],
+	'title': 'Snipt',
+	'contexts': ['all'],
 	'onclick': saveSelection
 });
 
@@ -14,7 +14,7 @@ function saveSelection(info, tab) {
 				'url': 'popup.html',
 				'type': 'popup',
 				'width': 340,
-				'height': 505
+				'height': 509
 			});
 	});
 }
